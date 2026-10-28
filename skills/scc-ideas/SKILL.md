@@ -56,6 +56,8 @@ Flag kept ideas that are forced, derivative of one source post, oversaturated in
 
 ## 5. Report (short)
 
+Start the report with the line `scc-ideas · 2026-10-28b`, so the user can see which version of this skill ran.
+
 A table per pattern with these columns: idea name · subject · score (fit, pull, producible, distinct) · flags. Then one line on which pattern looks strongest and why, citing its numbers.
 
 ## Rules
