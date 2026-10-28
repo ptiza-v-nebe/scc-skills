@@ -28,7 +28,12 @@ By hand:
 |---|---|---|
 | Claude Code | `/plugin marketplace add ptiza-v-nebe/scc-skills`, then `/plugin install scc@scc-skills` | automatic once auto-update is on for the marketplace (`/plugin` → Marketplaces) |
 | Codex, Cursor, Grok Build and other coding agents | `npx skills add ptiza-v-nebe/scc-skills --skill '*' -g` | `npx skills update -g` (put it in cron for hands-off) |
-| claude.ai, Claude Desktop, ChatGPT, Grok web | upload zips from the [latest release](https://github.com/ptiza-v-nebe/scc-skills/releases/latest) | re-upload the changed skill; the apps don't sync with GitHub |
+| ChatGPT | Plugins → New plugin → upload [scc-skills.zip](https://github.com/ptiza-v-nebe/scc-skills/releases/latest/download/scc-skills.zip) (all seven at once) | re-upload the new zip; ChatGPT doesn't sync with GitHub |
+| claude.ai, Claude Desktop, Grok web | upload each skill's zip from the [latest release](https://github.com/ptiza-v-nebe/scc-skills/releases/latest) | re-upload the changed skill; the apps don't sync with GitHub |
+
+`scc-skills.zip` is the plugin: `.codex-plugin/plugin.json`,
+`.claude-plugin/plugin.json` and `skills/` at its root, which is the layout
+ChatGPT's plugin upload checks for.
 
 ## Versions
 
@@ -56,14 +61,19 @@ Use the hook: Claude Code users get a pushed change straight away, so a
 CI failure after the push comes too late to stop an unbumped change. Each
 release's notes list the bumped skills and the version of every skill.
 
+The plugin as a whole has a version too, but you never set it: the
+manifests in the repo carry none, and the release workflow writes one
+(`<year>.<month>.<day>-<run>`, e.g. `2026.10.28-4`) into the copies inside
+`scc-skills.zip`. It rises with every release and matches the release tag.
+
 ## Changing a skill
 
 Edit `skills/<name>/SKILL.md`, bump its version (see above) and push to
 `main`. That is all:
 
-- Claude Code picks the change up by commit, because `plugin.json` sets no
-  `version`. If you ever add one, every change must bump it or nobody gets
-  the update.
+- Claude Code picks the change up by commit, because
+  `.claude-plugin/plugin.json` sets no `version`. If you ever add one,
+  every change must bump it or nobody gets the update.
 - `npx skills update` pulls straight from the repo.
 - The `release` workflow rebuilds the zips into a new release, so the
   `releases/latest/download/<name>.zip` links always serve the newest copy.

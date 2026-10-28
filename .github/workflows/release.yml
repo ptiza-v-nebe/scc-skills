@@ -7,7 +7,7 @@ name: release
 on:
   push:
     branches: [main]
-    paths: ["skills/**", "scripts/**"]
+    paths: ["skills/**", "scripts/**", ".codex-plugin/**", ".claude-plugin/**"]
   workflow_dispatch:
 
 permissions:
@@ -26,13 +26,21 @@ jobs:
           # then only the per-file checks run
           BEFORE: ${{ github.event.before }}
         run: scripts/check-versions.sh "${BEFORE:-HEAD}" | tee changed.txt
-      - run: scripts/build-zips.sh
+      - name: Build zips
+        # The plugin archive's version: semver, and rising with every run
+        # so an uploaded plugin can tell it's being replaced by a newer one.
+        run: |
+          version="$(date -u +%Y.%-m.%-d)-${GITHUB_RUN_NUMBER}"
+          echo "VERSION=$version" >>"$GITHUB_ENV"
+          scripts/build-zips.sh "$version"
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="v$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
+          tag="v$VERSION"
           {
+            echo "Plugin (scc-skills.zip) version $VERSION, from ${GITHUB_SHA::7}."
+            echo
             echo "## Changed"
             if [ -s changed.txt ]; then sed 's/^/- /' changed.txt; else echo "- none"; fi
             echo

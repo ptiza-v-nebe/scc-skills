@@ -40,17 +40,17 @@ These apps keep their own copy of each uploaded skill and do not sync with
 GitHub. You usually cannot upload for the user, so give them these links
 and the path for their app:
 
+- The whole plugin, all seven skills: `https://github.com/ptiza-v-nebe/scc-skills/releases/latest/download/scc-skills.zip`
 - One zip per skill: `https://github.com/ptiza-v-nebe/scc-skills/releases/latest/download/<skill-name>.zip`
-- All seven in one zip: `https://github.com/ptiza-v-nebe/scc-skills/releases/latest/download/scc-skills.zip`
 
 | App | Where to upload |
 |---|---|
+| ChatGPT | Plugins → New plugin → `scc-skills.zip` (one upload for all seven). Where Plugins is missing: Skills → upload each skill's zip; workspaces may need an admin to allow uploads |
 | claude.ai / Claude Desktop | Settings → Capabilities → Skills → upload, one zip per skill |
-| ChatGPT (Business, Enterprise, Edu) | Skills → upload; needs the workspace admin to allow skill uploads |
 | Grok web app | Skills → upload a `.zip` or the `SKILL.md` |
 
-Tell the user that after a change to this repo they must upload the changed
-skill again, replacing the old one. The release list at
+Tell the user that after a change to this repo they must upload again,
+replacing the old plugin or skill. The release list at
 `https://github.com/ptiza-v-nebe/scc-skills/releases` shows when one is due.
 
 ## After installing

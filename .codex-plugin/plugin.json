@@ -1,0 +1,19 @@
+{
+  "name": "scc",
+  "description": "Seven SCC workflow skills: scc-launch, scc-setup, scc-research, scc-ideas, scc-write, scc-test-plan, scc-learn. They drive the SCC MCP server's tools.",
+  "author": {
+    "name": "ptiza-v-nebe",
+    "url": "https://github.com/ptiza-v-nebe"
+  },
+  "repository": "https://github.com/ptiza-v-nebe/scc-skills",
+  "keywords": ["scc", "smart-content-companion", "social-media", "virlo", "content"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "SCC Skills",
+    "shortDescription": "Plan, research, write and review social content with Smart Content Companion",
+    "longDescription": "Workflows for the SCC MCP server: set up a campaign and brand, research what works in the niche with Virlo, turn patterns into ranked post ideas, write scripts and post text, build a 7- or 30-day test plan, and learn from published results.",
+    "developerName": "ptiza-v-nebe",
+    "category": "Productivity",
+    "defaultPrompt": ["Launch an SCC campaign from my brief."]
+  }
+}
