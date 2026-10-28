@@ -14,6 +14,8 @@
     "longDescription": "Workflows for the SCC MCP server: set up a campaign and brand, research what works in the niche with Virlo, turn patterns into ranked post ideas, write scripts and post text, build a 7- or 30-day test plan, and learn from published results.",
     "developerName": "ptiza-v-nebe",
     "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://github.com/ptiza-v-nebe/scc-skills",
     "defaultPrompt": ["Launch an SCC campaign from my brief."]
   }
 }
