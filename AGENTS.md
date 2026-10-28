@@ -55,5 +55,6 @@ skill again, replacing the old one. The release list at
 
 ## After installing
 
-Report which skills you installed, where, and how they will update. If
+Report which skills you installed with their versions (`metadata.version`
+in each `SKILL.md`), where, and how they will update. If
 the SCC MCP server isn't connected, say so: the skills call its tools.

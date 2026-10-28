@@ -1,9 +1,13 @@
 ---
 name: "scc-research"
 description: "Run SCC discover and analyze on Virlo data: 3 distinct search questions, tick fitting themes, pick favorites by virality score, find patterns and read them as fixed vs open labels."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Research: Virlo searches → favorites → patterns
+
+Begin your first reply in each run with `scc-research v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user wants to know what works in their niche, or needs patterns before writing ("research my niche", "find what works", "refresh research", "find patterns"). The output is ticked themes, favorites and patterns stored in SCC, plus a short readout.
 

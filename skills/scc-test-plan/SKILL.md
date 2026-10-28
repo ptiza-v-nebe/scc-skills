@@ -1,9 +1,13 @@
 ---
 name: "scc-test-plan"
 description: "Build a 7- or 30-day SCC plan as a deliberate test: spread patterns, never repeat hook_type × content_format back to back, aim intents, write each entry's text."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Test Plan: scripts + intents → a varied posting plan
+
+Begin your first reply in each run with `scc-test-plan v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user wants a week or a month planned ("plan next week", "build a 30-day calendar", "fill the plan"). SCC plans have no dates; Schedule decides those. The output is a plan whose days hold entries (a script plus an intent), each with its text written.
 

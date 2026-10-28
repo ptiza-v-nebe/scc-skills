@@ -1,9 +1,13 @@
 ---
 name: "scc-ideas"
 description: "Turn SCC patterns into ranked post ideas (plan intents): read fixed vs open Virlo labels, generate 3x, rank, flag, save with plan_save_intents."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Ideas: patterns → ranked post intents
+
+Begin your first reply in each run with `scc-ideas v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user wants ideas for a campaign, a pattern or a plan ("give me ideas for pattern X", "fill the plan", "what should we post"). The output is plan intents saved in SCC, not a list in chat.
 
@@ -55,8 +59,6 @@ Flag kept ideas that are forced, derivative of one source post, oversaturated in
 - If the user wants the SCC planner's framing, call `plan_propose_prompt` (step intents), answer it with the kept ideas, and save that way.
 
 ## 5. Report (short)
-
-Start the report with the line `scc-ideas · 2026-10-28b`, so the user can see which version of this skill ran.
 
 A table per pattern with these columns: idea name · subject · score (fit, pull, producible, distinct) · flags. Then one line on which pattern looks strongest and why, citing its numbers.
 

@@ -1,9 +1,13 @@
 ---
 name: "scc-learn"
 description: "Review published SCC posts: compare results by virality and engagement against each post's shape, say what can and cannot be concluded, approve learnings as campaign hints."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Learn: results → conclusions → learnings
+
+Begin your first reply in each run with `scc-learn v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user asks how posts did ("how did last week go", "what worked", "review performance", "update learnings"). The output is a short diagnosis in chat and approved learnings saved to the campaign, which the writer then reads for later scripts.
 

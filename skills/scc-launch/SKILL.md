@@ -1,9 +1,13 @@
 ---
 name: "scc-launch"
 description: "Build a complete SCC campaign from one brief (channel, brand, references, audience, goal, niche): setup, Virlo research, patterns, ideas, scripts and a 7-day plan."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Launch: one brief → a full campaign
+
+Begin your first reply in each run with `scc-launch v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Turn one brief into a working SCC campaign: setup, research, patterns, post ideas, scripts and a 7-day plan. SCC stores the decisions and their reasons. You do the thinking: wherever SCC would write something, call its `*_prompt` tool, answer that prompt yourself and save your answer with the tool the prompt names. Pass `written_by` with your model name.
 

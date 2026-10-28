@@ -30,9 +30,36 @@ By hand:
 | Codex, Cursor, Grok Build and other coding agents | `npx skills add ptiza-v-nebe/scc-skills --skill '*' -g` | `npx skills update -g` (put it in cron for hands-off) |
 | claude.ai, Claude Desktop, ChatGPT, Grok web | upload zips from the [latest release](https://github.com/ptiza-v-nebe/scc-skills/releases/latest) | re-upload the changed skill; the apps don't sync with GitHub |
 
+## Versions
+
+Every skill has its own version, because skills change independently. It
+sits in two places in each `SKILL.md`, which must agree:
+
+- `metadata.version` in the frontmatter: the version tools read;
+- the line under the title that tells the agent to begin its first reply
+  with `<name> v<version>`: the version the user sees, in any app, so they
+  can tell which copy ran (for example a stale upload in ChatGPT).
+
+Bump it on every change to that skill: patch (`1.0.1`) for wording, minor
+(`1.1.0`) for changed behaviour, major (`2.0.0`) when it needs different
+SCC tools or breaks how users run it. Leave the other skills alone.
+
+`scripts/check-versions.sh` checks both places agree and that every
+changed skill was bumped. It runs in the release workflow, and before each
+commit once you turn on the hook in your clone:
+
+```
+git config core.hooksPath .githooks
+```
+
+Use the hook: Claude Code users get a pushed change straight away, so a
+CI failure after the push comes too late to stop an unbumped change. Each
+release's notes list the bumped skills and the version of every skill.
+
 ## Changing a skill
 
-Edit `skills/<name>/SKILL.md` and push to `main`. That is all:
+Edit `skills/<name>/SKILL.md`, bump its version (see above) and push to
+`main`. That is all:
 
 - Claude Code picks the change up by commit, because `plugin.json` sets no
   `version`. If you ever add one, every change must bump it or nobody gets

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Refuses a commit that changes a skill without bumping its version.
+# Turn on once per clone: git config core.hooksPath .githooks
+exec "$(git rev-parse --show-toplevel)/scripts/check-versions.sh" HEAD >/dev/null

@@ -1,9 +1,13 @@
 ---
 name: "scc-write"
 description: "Write an SCC script and its post text from a pattern and an intent: keep fixed Virlo labels, pick open ones from evidence, 20 hooks → 1, voice and banned-phrase check, save via compose tools."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Write: pattern + intent → script → post text
+
+Begin your first reply in each run with `scc-write v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user wants a script or a post written ("write the script for…", "make the post for intent X", "fill this plan entry"). You write; SCC stores. Every writing step goes the same way: call SCC's `*_prompt` tool, answer it yourself to its schema, then save with the tool it names and pass `written_by`.
 

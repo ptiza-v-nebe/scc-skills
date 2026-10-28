@@ -1,9 +1,13 @@
 ---
 name: "scc-setup"
 description: "Turn a messy brief into an SCC campaign and brand: profile (niche, audience, voice, pillars, banned phrases), brand fields, optional reference-channel study, channel and rules."
+metadata:
+  version: "1.0.0"
 ---
 
 # SCC Setup: brief → campaign + brand
+
+Begin your first reply in each run with `scc-setup v1.0.0` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user starts a new client, channel or campaign, or wants to fix a weak profile ("set up a campaign for…", "new client", "my profile is thin"). The output is a campaign and a brand in SCC. Nothing is written in chat that SCC can hold.
 
