@@ -1,0 +1,9 @@
+{
+  "name": "scc",
+  "description": "Seven SCC workflow skills: scc-launch, scc-setup, scc-research, scc-ideas, scc-write, scc-test-plan, scc-learn. They drive the SCC MCP server's tools.",
+  "author": {
+    "name": "ptiza-v-nebe"
+  },
+  "keywords": ["scc", "smart-content-companion", "social-media", "virlo", "content"],
+  "skills": ["./skills"]
+}

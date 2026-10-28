@@ -1,0 +1,17 @@
+{
+  "name": "scc-skills",
+  "owner": {
+    "name": "ptiza-v-nebe"
+  },
+  "metadata": {
+    "description": "Workflow skills for Smart Content Companion (SCC): setup, research, ideas, writing, test plans and learning from results."
+  },
+  "plugins": [
+    {
+      "name": "scc",
+      "source": "./",
+      "description": "Seven SCC workflow skills: scc-launch, scc-setup, scc-research, scc-ideas, scc-write, scc-test-plan, scc-learn.",
+      "category": "productivity"
+    }
+  ]
+}

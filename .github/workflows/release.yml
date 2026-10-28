@@ -1,0 +1,29 @@
+# Every change to a skill on main publishes a new release with fresh zips, so
+# https://github.com/ptiza-v-nebe/scc-skills/releases/latest/download/<file>.zip
+# always serves the current version.
+name: release
+
+on:
+  push:
+    branches: [main]
+    paths: ["skills/**", "scripts/build-zips.sh"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: scripts/build-zips.sh
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="v$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
+          gh release create "$tag" dist/*.zip \
+            --target "$GITHUB_SHA" \
+            --title "$tag" \
+            --notes "Skills as of ${GITHUB_SHA}."
