@@ -2,12 +2,12 @@
 name: "scc-write"
 description: "Write an SCC script and its post text from a pattern and an intent: keep fixed Virlo labels, pick open ones from evidence, 20 hooks → 1, voice and banned-phrase check, save via compose tools."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # SCC Write: pattern + intent → script → post text
 
-Begin your first reply in each run with `scc-write v1.0.0` on its own line, so the user can see which version of this skill ran.
+Begin your first reply in each run with `scc-write v1.0.1` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user wants a script or a post written ("write the script for…", "make the post for intent X", "fill this plan entry"). You write; SCC stores. Every writing step goes the same way: call SCC's `*_prompt` tool, answer it yourself to its schema, then save with the tool it names and pass `written_by`.
 
@@ -61,8 +61,8 @@ For each step, call `compose_propose_prompt` (script_id, step), answer it, and s
 
 ## 4. Post text
 
-1. `compose_text_prompt` (script_id, count: 2).
-2. Write two takes that differ in how they open, not in what they say. If the `trigger-posts` skill is available and the user wants it, use it for the caption.
+1. `compose_text_prompt` (script_id): one take, one variant per post.
+2. Write that take. If the `trigger-posts` skill is available and the user wants it, use it for the caption.
 3. Save with `compose_save_takes`.
 
 For a plan entry instead of a script: `plan_text_prompt` (plan_id, entry_id) → write → `plan_save_takes`.

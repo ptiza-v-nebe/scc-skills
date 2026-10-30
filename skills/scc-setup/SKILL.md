@@ -2,12 +2,12 @@
 name: "scc-setup"
 description: "Turn a messy brief into an SCC campaign and brand: profile (niche, audience, voice, pillars, banned phrases), brand fields, optional reference-channel study, channel and rules."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # SCC Setup: brief → campaign + brand
 
-Begin your first reply in each run with `scc-setup v1.0.0` on its own line, so the user can see which version of this skill ran.
+Begin your first reply in each run with `scc-setup v1.0.1` on its own line, so the user can see which version of this skill ran.
 
 Use this when the user starts a new client, channel or campaign, or wants to fix a weak profile ("set up a campaign for…", "new client", "my profile is thin"). The output is a campaign and a brand in SCC. Nothing is written in chat that SCC can hold.
 
@@ -50,7 +50,7 @@ If the user gave reference Instagram channels (up to 3), offer a brand study:
 
 1. `campaigns_create` (name, profile).
 2. `setup_save` (campaign_id): brand_id, `channel: {channel_id, on: true}`, rules.
-   - Default rules: `min_virality_score: 10`, `variants_per_script: 2`, `critic_pass_score: 15`, `max_revisions: 1`.
+   - Default rules: `min_virality_score: 10`, `critic_pass_score: 15`, `max_revisions: 1`.
    - If the user says how often to post or how picky to be, adjust `top_k_per_run` and `min_virality_score`.
 3. `campaigns_get` to confirm. `profile_complete` should be true.
 

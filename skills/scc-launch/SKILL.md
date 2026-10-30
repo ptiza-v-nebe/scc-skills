@@ -2,12 +2,12 @@
 name: "scc-launch"
 description: "Build a complete SCC campaign from one brief (channel, brand, references, audience, goal, niche): setup, Virlo research, patterns, ideas, scripts and a 7-day plan."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # SCC Launch: one brief → a full campaign
 
-Begin your first reply in each run with `scc-launch v1.0.0` on its own line, so the user can see which version of this skill ran.
+Begin your first reply in each run with `scc-launch v1.0.1` on its own line, so the user can see which version of this skill ran.
 
 Turn one brief into a working SCC campaign: setup, research, patterns, post ideas, scripts and a 7-day plan. SCC stores the decisions and their reasons. You do the thinking: wherever SCC would write something, call its `*_prompt` tool, answer that prompt yourself and save your answer with the tool the prompt names. Pass `written_by` with your model name.
 
@@ -33,7 +33,7 @@ Before creating anything, call `campaigns_list` and `brands_get` and reuse what 
 1. Run `account_list_channels` to find the channel id. If the channel is missing, run `account_sync_channels` once.
 2. Brand: if there's no matching brand, create one with `brands_save` (name, brief, tone, personality, visual_style, colors, tagline, references). If reference channels were given and the budget allows, run `brands_analyze_channels`. It costs $0.75 per channel, so say so before running it. Read the result with `brands_get_studies` and apply the suggestions with `brands_save`.
 3. Run `campaigns_create` with the profile (niche, audience, voice, pillars, banned_phrases, language).
-4. Run `setup_save` with campaign_id, brand_id, the channel turned on, and rules (`min_virality_score: 10`, `variants_per_script: 2`).
+4. Run `setup_save` with campaign_id, brand_id, the channel turned on, and rules (`min_virality_score: 10`).
 
 ## Phase 2: Discover (paid, about 8–20 minutes per search)
 
